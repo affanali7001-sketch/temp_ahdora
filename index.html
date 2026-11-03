@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#10251f" />
+  <title>Reset | Your Personal Growth Challenge</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <a class="brand" href="#overview">
+        <span class="brand-mark">R</span>
+        <span class="brand-copy"><strong>THE RESET</strong><small>YOUR GROWTH JOURNEY</small></span>
+      </a>
+      <div class="side-label">WORKSPACE</div>
+      <a class="nav-link active" href="#overview"><span class="nav-icon">◫</span><span>Overview</span></a>
+      <a class="nav-link" href="#journey"><span class="nav-icon">▦</span><span>My challenge</span></a>
+      <a class="nav-link" href="#rewards"><span class="nav-icon">✧</span><span>Rewards vault</span></a>
+      <a class="nav-link" href="#routine"><span class="nav-icon">☑</span><span>Daily routine</span></a>
+      <div class="sidebar-quote">
+        <span class="quote-mark">“</span>
+        <p>You don't need a new year. You need a new decision.</p>
+        <span class="quote-credit">A PROMISE TO YOURSELF</span>
+      </div>
+      <div class="sidebar-bottom"><span class="save-dot"></span><span>Progress saves on this device</span></div>
+    </aside>
+
+    <main class="main-content" id="overview">
+      <header class="topbar">
+        <div>
+          <p class="eyebrow">YOUR PERSONAL GROWTH SYSTEM</p>
+          <h1>Become someone you’re proud of.</h1>
+          <p class="topbar-subtitle">Faith, learning, health and discipline. One day at a time.</p>
+        </div>
+        <div class="top-actions">
+          <label class="challenge-select-wrap">
+            <span>CHOOSE YOUR CHALLENGE</span>
+            <select id="challenge-select" aria-label="Choose challenge duration">
+              <option value="7">7 Days · Starter</option>
+              <option value="30" selected>30 Days · Discipline</option>
+              <option value="90">90 Days · Transformation</option>
+              <option value="365">365 Days · Life Reset</option>
+            </select>
+          </label>
+          <button class="button button-quiet" id="reset-button" type="button">↻ Reset</button>
+        </div>
+      </header>
+
+      <section class="hero-card">
+        <div class="hero-content">
+          <span class="hero-kicker"><span class="sparkle">✦</span> <span id="hero-kicker">30 DAYS · DISCIPLINE CHALLENGE</span></span>
+          <h2>Consistency over<br /><em>perfection.</em></h2>
+          <p>Complete your daily habits, earn points and unlock surprise rewards at every milestone. Your only competition is yesterday's you.</p>
+          <div class="hero-progress-copy"><span>CHALLENGE PROGRESS</span><strong id="overall-progress-label">0% completed</strong></div>
+          <div class="progress-track hero-track"><span id="overall-progress-bar" style="width:0%"></span></div>
+        </div>
+        <div class="hero-art" aria-hidden="true">
+          <div class="orbit orbit-one"></div><div class="orbit orbit-two"></div>
+          <div class="sun-symbol">✦</div><div class="hero-number" id="hero-days">30<span>DAYS</span></div>
+          <div class="art-caption">ONE DAY<br />AT A TIME</div>
+        </div>
+      </section>
+
+      <section class="stats-grid" aria-label="Challenge statistics">
+        <article class="stat-card"><div class="stat-top"><span class="stat-icon green-icon">✦</span><span class="stat-label">TOTAL POINTS</span></div><div class="stat-value" id="points-stat">0</div><p class="stat-note">Earn 10 points per completed habit</p></article>
+        <article class="stat-card"><div class="stat-top"><span class="stat-icon lilac-icon">▦</span><span class="stat-label">DAYS CHECKED IN</span></div><div class="stat-value"><span id="days-tracked-stat">0</span><small id="days-total"> / 30</small></div><p class="stat-note">Days where you updated your routine</p></article>
+        <article class="stat-card"><div class="stat-top"><span class="stat-icon gold-icon">✓</span><span class="stat-label">HABITS COMPLETED</span></div><div class="stat-value"><span id="habits-done-stat">0</span><small id="habits-total"> / 360</small></div><p class="stat-note">Every small action counts</p></article>
+      </section>
+
+      <div class="content-grid">
+        <section class="journey-panel panel" id="journey">
+          <div class="section-heading">
+            <div><p class="eyebrow">YOUR JOURNEY</p><h2 id="journey-title">30 days. One stronger you.</h2><p>Select a day, update your habits and collect points.</p></div>
+            <span class="days-counter" id="days-counter">30 DAYS</span>
+          </div>
+          <div class="filter-row" role="group" aria-label="Filter days">
+            <button class="filter-button active" data-filter="all" type="button">All days</button>
+            <button class="filter-button" data-filter="started" type="button">In progress</button>
+            <button class="filter-button" data-filter="logged" type="button">Completed check-in</button>
+            <button class="filter-button" data-filter="pending" type="button">Not started</button>
+          </div>
+          <div class="days-grid" id="days-grid" aria-live="polite"></div>
+        </section>
+
+        <aside class="right-column">
+          <section class="panel rewards-panel" id="rewards">
+            <div class="section-heading compact-heading">
+              <div><p class="eyebrow">MILESTONE UNLOCKS</p><h2>Rewards vault</h2></div>
+              <span class="vault-icon">✧</span>
+            </div>
+            <p class="rewards-intro">Keep earning points. Surprise rewards unlock as you move forward.</p>
+            <div class="reward-summary"><span>YOUR POINTS</span><strong id="reward-points">0 pts</strong></div>
+            <div class="reward-list" id="reward-list"></div>
+            <p class="reward-note">Rewards are personal treats you choose to give yourself. No purchase needed.</p>
+          </section>
+
+          <section class="panel routine-panel" id="routine">
+            <div class="section-heading compact-heading"><div><p class="eyebrow">THE DAILY PLAN</p><h2>Your routine</h2></div><span class="routine-total">12 HABITS</span></div>
+            <div class="routine-list">
+              <div class="routine-item"><span class="routine-time">01</span><div><strong>Fajr & Quran</strong><small>Prayer and recitation</small></div></div>
+              <div class="routine-item"><span class="routine-time">02</span><div><strong>College</strong><small>Classes and practicals</small></div></div>
+              <div class="routine-item"><span class="routine-time">03</span><div><strong>Zuhr, lunch & rest</strong><small>Prayer, meal and short break</small></div></div>
+              <div class="routine-item"><span class="routine-time">04</span><div><strong>Self-study</strong><small>College subjects and practice</small></div></div>
+              <div class="routine-item"><span class="routine-time">05</span><div><strong>Asr, walk or Quran</strong><small>Movement or recitation</small></div></div>
+              <div class="routine-item"><span class="routine-time">06</span><div><strong>Maghrib & evening study</strong><small>Prayer, then focused study</small></div></div>
+              <div class="routine-item"><span class="routine-time">07</span><div><strong>Isha & sleep</strong><small>Wind down; sleep by 11–12</small></div></div>
+            </div>
+            <p class="routine-footnote">Prayer times change through the year. Follow your local prayer timetable.</p>
+          </section>
+
+          <section class="thought-card"><span class="thought-icon">✦</span><p class="eyebrow">A THOUGHT TO KEEP</p><blockquote>“You do not have to be perfect. You just have to keep coming back.”</blockquote><span class="thought-line"></span><p class="thought-small">A missed day is a pause, not the end of your journey.</p></section>
+        </aside>
+      </div>
+      <footer class="page-footer"><span>THE RESET <b>•</b> MADE FOR YOUR BETTER SELF</span><span>Progress is stored in this browser on this device.</span></footer>
+    </main>
+  </div>
+
+  <div class="modal-backdrop" id="checkin-modal" hidden>
+    <section class="checkin-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+      <div class="modal-header"><div><p class="eyebrow">DAILY CHECK-IN</p><h2 id="modal-title">Day 1</h2><p class="modal-subtitle">Mark each habit honestly. No guilt, just progress.</p></div><button class="icon-button" id="close-modal" type="button" aria-label="Close">×</button></div>
+      <div class="modal-progress"><div class="modal-progress-text"><span id="modal-count">0 of 12 marked</span><strong id="modal-done">0 completed · 0 pts</strong></div><div class="progress-track"><span id="modal-progress-bar" style="width:0%"></span></div></div>
+      <div class="task-list" id="task-list"></div>
+      <div class="modal-footer"><span>✓ Done = 10 points &nbsp; · &nbsp; ✕ Missed = 0 points</span><button class="button button-primary" id="done-modal" type="button">Save & close →</button></div>
+    </section>
+  </div>
+
+  <div class="reward-backdrop" id="reward-modal" hidden>
+    <section class="reward-pop" role="dialog" aria-modal="true" aria-labelledby="reward-modal-title">
+      <div class="reward-confetti">✦ ✧ ✦</div><p class="eyebrow">MILESTONE UNLOCKED</p><h2 id="reward-modal-title">You did it!</h2>
+      <p id="reward-modal-copy">A new reward is waiting for you.</p>
+      <div class="unlocked-gift">🎁</div><button class="button button-primary" id="close-reward" type="button">Let's go →</button>
+    </section>
+  </div>
+</body>
+</html>
